@@ -1,0 +1,129 @@
+@use "../global/" as global;
+
+.p-philosophy{
+  padding: 20px 50px 40px;
+  border: 0.5px solid #fff;
+  position: relative;
+  z-index: map-get(global.$z-map, base);
+  &::before,
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: calc(50% + 6px);
+    height: calc(100% + 6px);
+    z-index: map-get(global.$z-map, under);
+  }
+  &::before{
+    border-top: 0.5px solid #fff;
+    border-left: 0.5px solid #fff;
+    top: -6px;
+    left: -6px;
+  }
+  &::after{
+    border-right: 0.5px solid #fff;
+    border-bottom: 0.5px solid #fff;
+    bottom: -6px;
+    right: -6px;
+  }
+
+  @include global.mq(m){
+    width: 80%;
+    padding: 50px 30px 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include global.mq(){
+      width: 100%;
+      padding: 25px 30px 20px;
+    }
+
+  }
+  
+}
+
+.p-philosophy__inner{
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 55px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 80px;
+    height: 25px;
+    background-image: url(../images/highballer_illust.svg);
+    background-size: cover;
+    background-position: center;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include global.mq(){
+      width: 58px;
+      height: 18px;
+    }
+
+  }
+}
+
+.p-philosophy__title{
+  @include global.font(1000, 28, 22, 48, 300, 700);
+  color:  #fff;
+  text-align: center;
+  span{
+    @include global.font(1000, 32, 28, null, null, null);
+    font-style: italic;
+    font-family: global.$englishFont;
+  }
+}
+
+.p-philosophy__list{
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  counter-reset: num;
+
+  @include global.mq(){
+    max-height: initial;
+  }
+
+  li{
+    @include global.font(1000, 16, 14, 24, 100, 400);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    margin-right: 18px;
+    border-bottom: 0.5px solid #fff;
+    &::before{
+      counter-increment: num;
+      content: counter(num, decimal-leading-zero);
+      @include global.font(1000, 22, 20, 33, null, 700);
+      font-family: global.$englishFont;
+      color: #fff;
+      display: block;
+      width: 31px;
+      margin-right: 10px;
+      text-align: right;
+    }
+
+    @include global.mq(m){
+      padding-bottom: 8px;
+      margin-top: 10px;
+      margin-left: 12px;
+      margin-right: 12px;
+      &::before{
+        margin-right: 8px;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,18 @@
+@use "../global/" as global;
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: global.$mainFont;
+  color: map-get(global.$color, black);
+}
+
+summary {
+  list-style-type: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}

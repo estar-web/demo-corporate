@@ -1,0 +1,26 @@
+@use "../global/" as global;
+
+@mixin inner($width: global.$l-inner, $padding: global.$padding) {
+  max-width: calc($width + $padding * 2);
+  padding: 0 $padding;
+  margin-inline: auto;
+  position: relative;
+
+  @include global.mq() {
+    max-width: global.$s-inner;
+    padding: 0 global.$padding-sp;
+  }
+
+}
+
+.l-inner{
+  @include inner();
+}
+
+.l-inner--m{
+  @include inner(global.$m-inner);
+}
+
+.l-inner--s{
+  @include inner(global.$s-inner);
+}
