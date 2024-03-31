@@ -1,0 +1,51 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+
+.p-lowerMv {
+  max-height: 250px;
+  aspect-ratio: 375 / 250;
+  position: relative;
+  padding-left: 5.6%;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    clip-path: polygon(0 0, 44% 0, 6% 100%, 0 100%);
+    background-color: rgba(2, 62, 120, 0.80);
+    width: 100%;
+    height: 100%;
+  }
+
+  @include mq() {
+    aspect-ratio: 1280 / 250;
+    padding-left: 17.42186%;
+
+    &::before {
+      clip-path: polygon(0 0, 28% 0, 17% 100%, 0 100%);
+    }
+  }
+}
+
+.p-lowerMv--service {
+  background: transparent url(../images/service/mv-service-sp.webp) no-repeat center center / cover;
+
+
+  @include mq() {
+    background-image: url(../images/service/mv-service-pc.webp);
+  }
+}
+
+.p-lowerMv__title {
+  margin-block: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  gap: 9px;
+  color: #023E78;
+  position: relative;
+  z-index: map.get($z-map, base);
+}

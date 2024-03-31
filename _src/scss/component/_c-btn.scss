@@ -1,5 +1,99 @@
-@use "../global/" as global;
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
 
-.c-btn{
-  
+.c-btn {
+  font-size: 0.875rem;
+  color: #023E78;
+  padding: math.div(26, 14)*1em;
+  width: 100%;
+  border: 1px solid #023E78;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+
+  @include btn_hover();
+
+  @include mq() {
+    font-size: 1rem;
+    padding: math.div(24, 16)*1em;
+  }
+}
+
+.c-btn--nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #023E78;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #023E78;
+  padding: math.div(22, 16)*1em;
+
+  @include btn_hover();
+
+  @include mq() {
+    font-size: 0.875rem;
+    padding: 1.5em;
+    width: 176px;
+  }
+}
+
+.c-btn--fill {
+  color: map.get($color, text2);
+  background-color: #023E78;
+
+  @include btn_hover(#002a52, map.get($color, text2));
+}
+
+.c-btn--arrow {
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    translate: 0 -50%;
+    transition: right $ts-time $ts-func 0s;
+
+    path {
+      transition: fill $ts-time $ts-func 0s;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        right: 8px;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+.c-btn--accent {
+  font-family: $englishFont;
+  font-weight: 500;
+  font-style: italic;
+  color: map.get($color, accent1);
+  border-color: map.get($color, accent1);
+  background-color: transparent;
+
+  @include btn_hover(map.get($color, accent1), #1a1a1a);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        right: 8px;
+
+        path {
+          fill: #1a1a1a;
+        }
+      }
+    }
+  }
 }

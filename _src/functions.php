@@ -106,6 +106,17 @@ function my_delete_local_files(){
 }
 add_action('wp_enqueue_scripts', 'my_delete_local_files');
 
+/**
+ * Googleフォントの読み込み
+ *
+ */
+function my_font()
+{
+  //Googleフォント 読み込み
+  wp_enqueue_style('my_font', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@100..900&display=swap', array(), null, 'all');
+}
+add_action('wp_enqueue_scripts', 'my_font');
+
 
 /**
  * CSSの読み込み

@@ -1,0 +1,13 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-link {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+
+  @include mq() {
+    gap: 85px;
+  }
+}

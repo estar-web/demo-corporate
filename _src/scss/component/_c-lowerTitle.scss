@@ -1,0 +1,19 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.c-lowerTitle--eg {
+  font-style: italic;
+  @include fz_clamp(32, 60);
+  line-height: 1.2;
+  background-color: #fff;
+  width: fit-content;
+  font-family: $englishFont;
+}
+
+.c-lowerTitle--jp {
+  @include fz_clamp(16, 20);
+  line-height: 1.5;
+  background-color: #fff;
+  width: fit-content;
+}

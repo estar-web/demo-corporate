@@ -1,0 +1,19 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.c-circle {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #fff400;
+  display: block;
+
+  @include mq() {
+    width: 51px;
+  }
+}
+
+.c-circle--fill {
+  background-color: #fff400;
+}

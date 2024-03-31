@@ -1,12 +1,13 @@
-@use "../global/" as global;
+@use "../global/" as *;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  font-family: global.$mainFont;
-  color: map-get(global.$color, black);
+body {
+  font-family: $mainFont;
+  color: map-get($color, text1);
+  font-weight: 500;
 }
 
 summary {

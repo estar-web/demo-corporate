@@ -1,15 +1,21 @@
 // color
 $color: (
-  
+  main:#163F74,
+  mainStrong:#002a52,
+  mainSmall:#EEF3F8,
+  accent1:#FEF251,
+  accent2:#D33365,
+  text1:#1a1a1a,
+  text2:#FFFFFF,
 );
 
 // font-family
 $mainFont: 'Noto Sans JP', "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-$englishFont: 'Montserrat', sans-serif;
-$mixedFont: 'Montserrat', 'Noto Sans JP', "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$englishFont: 'Fira Sans', sans-serif;
+$mixedFont: 'Fira Sans', 'Noto Sans JP', "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
 // inner
-$xl-inner: 900px;
+$xl-inner: 1100px;
 $l-inner: 800px;
 $m-inner: 780px;
 $s-inner: 550px;
@@ -20,20 +26,19 @@ $padding: 20px;
 $padding-sp: 16px;
 
 // breakpoint
-$breakpoints : (
-  "xl":"screen and (max-width:1480px)",
-  "l":"screen and (max-width:1280px)",
-  "m":"screen and (max-width:1080px)",
-  "s":"screen and (max-width:767px)",
-  "xs":"screen and (max-width:499px)",
+$breakpoints : ("xxl":"screen and (width >= 1400px)",
+  "xl":"screen and (width >= #{$xl-inner})",
+  "l":"screen and (width >= 992px)",
+  "m":"screen and (width >= 768px)",
+  "s":"screen and (width >= 576px)",
 );
 
 // transition time
 $ts-time: 0.3s;
+$ts-func: ease;
 
 // z-index
-$z-map : (
-  loading: 10000,
+$z-map : (loading: 10000,
   header: 1000,
   sidebar: 100,
   base: 1,

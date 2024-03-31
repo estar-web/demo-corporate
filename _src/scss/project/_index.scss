@@ -1,5 +1,7 @@
 // projectフォルダ
 
-@use "./p-item";
-@use "./p-philosophy";
-@use "./p-banner";
+@use "p-header";
+@use "p-headerBtn";
+@use "p-link";
+@use "p-title";
+@use "p-lowerMv";

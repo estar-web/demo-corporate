@@ -1,0 +1,11 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-headerBtn {
+  max-width: 295px;
+
+  @include mq() {
+    max-width: 176px;
+  }
+}

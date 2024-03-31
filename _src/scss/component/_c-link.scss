@@ -1,0 +1,85 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.c-link {
+  color: map.get($color, text2);
+  font-family: $englishFont;
+  font-size: 1.25rem;
+  font-style: italic;
+  position: relative;
+  /*形状*/
+  display: block;
+
+  &::before,
+  &::after {
+    content: '';
+    /*絶対配置で下線の位置を決める*/
+    position: absolute;
+    right: -77px;
+    height: 2px;
+    background: #fff;
+  }
+
+  /*下線の形状*/
+  &:before {
+    top: 50%;
+    translate: 0 -50%;
+    width: 64px;
+  }
+
+  /*矢印の形状*/
+  &::after {
+    top: 35%;
+    width: 15px;
+    background: #fff;
+    transform: rotate(35deg);
+  }
+
+  @include mq() {
+    font-size: 2rem;
+
+    &::before {
+      width: 95.5px;
+      right: -64.5px;
+      right: -113.5px;
+    }
+
+    &::after {
+      right: -64.5px;
+      right: -113.5px;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &::before {
+      transition: width $ts-time $ts-func 0s, right $ts-time $ts-func 0s;
+    }
+
+    &::after {
+      transition: right $ts-time $ts-func 0s;
+    }
+
+    &:hover {
+
+      &::before,
+      &::after {
+        right: -160.5px;
+
+      }
+
+      &::before {
+        width: 142.5px;
+      }
+    }
+  }
+}
+
+.c-link--fill {
+  color: map.get($color, text1);
+
+  &::before,
+  &::after {
+    background-color: #1a1a1a;
+  }
+}

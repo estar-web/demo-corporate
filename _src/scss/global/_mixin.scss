@@ -2,39 +2,72 @@
 @use "./function" as fn;
 
 // メディアクエリ
-@mixin mq($breakpoint: s){
-  @media #{map-get(var.$breakpoints,$breakpoint)}{
+@mixin mq($breakpoint: s) {
+  @media #{map-get(var.$breakpoints,$breakpoint)} {
     @content;
   }
 }
 
 // font周りのmixin
-@mixin font($size: null, $max-fz, $min-fz, $lh: null, $ls: null, $fw: null){
-  @if $size{
+@mixin font($size: null, $max-fz, $min-fz, $lh: null, $ls: null, $fw: null) {
+  @if $size {
     font-size: clamp(fn.rem($min-fz), calc($max-fz / $size * 100vw), fn.rem($max-fz));
   }
-  @if $lh{
+
+  @if $lh {
     line-height: fn.lh($lh, $max-fz);
   }
-  @if $ls{
+
+  @if $ls {
     letter-spacing: fn.spacing($ls);
   }
-  @if $fw{
+
+  @if $fw {
     font-weight: $fw;
   }
 }
 
 // font-sizeのVW化
-@mixin fz_vw($size: 16){
+@mixin fz_vw($size: 16) {
   font-size: fn.get_vw($size);
+}
+
+// font-sizeをclamp関数で出力
+@mixin fz_clamp($minFontSize, $maxFontSize, $minWidth: 375, $maxWidth: var.$l-inner) {
+  font-size: fn.calc_clamp($minFontSize, $maxFontSize, $minWidth, $maxWidth);
 }
 
 // リンクのホバーアクションデフォルト
 @mixin hover() {
   @media(hover:hover) {
+
     &:any-link:hover,
-    &:enabled:hover{
+    &:enabled:hover {
       @content;
     }
   }
+}
+
+// ホバーがないデバイスでのリンククリック時のデフォルト
+@mixin hov-none() {
+  @media (hover: none) {
+    transition: opacity var.$ts-time var.$ts-func 0s;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+@mixin btn_hover($bgColor: #023e78, $textColor: #fff) {
+  @media (hover: hover) and (pointer: fine) {
+    transition: color var.$ts-time var.$ts-func 0s, background-color var.$ts-time var.$ts-func 0s;
+
+    &:hover {
+      color: $textColor;
+      background-color: $bgColor;
+    }
+  }
+
+  @include hov-none();
 }

@@ -1,0 +1,14 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-title {
+  color: #023E78;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.p-title--text2 {
+  color: map.get($color, text2);
+}
