@@ -8,6 +8,11 @@ body {
   font-family: $mainFont;
   color: map-get($color, text1);
   font-weight: 500;
+  padding-top: $header-hight-sp;
+
+  @include mq() {
+    padding-top: $header-hight-pc;
+  }
 }
 
 summary {

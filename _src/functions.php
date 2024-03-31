@@ -113,7 +113,7 @@ add_action('wp_enqueue_scripts', 'my_delete_local_files');
 function my_font()
 {
   //Googleフォント 読み込み
-  wp_enqueue_style('my_font', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@100..900&display=swap', array(), null, 'all');
+  wp_enqueue_style('my_font', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap', array(), null, 'all');
 }
 add_action('wp_enqueue_scripts', 'my_font');
 
@@ -129,6 +129,17 @@ function my_styles(){
 }
 add_action( 'wp_enqueue_scripts', 'my_styles' );
 
+/**
+ * jQueryの読み込み
+ *
+ * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
+ */
+function jquery()
+{
+  //CDN 読み込み
+  wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
+}
+add_action('wp_enqueue_scripts', 'jquery');
 
 /**
  * JavaScriptの読み込み

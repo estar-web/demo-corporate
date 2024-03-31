@@ -1,0 +1,15 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-headerLogo {}
+
+.p-headerLogo__link {
+  color: #023E78;
+  font-family: $logoFont;
+  @include fz_clamp(28, 40);
+  font-weight: 700;
+  font-style: italic;
+  white-space: nowrap;
+  text-transform: capitalize;
+}

@@ -1,0 +1,99 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-headerNav {
+  background: #023e78;
+  inset: $header-hight-sp 0 auto 0;
+  position: fixed;
+  text-align: center;
+  transition: clip-path $ts-time $ts-func;
+  width: 100%;
+  z-index: map.get($z-map , base);
+  aspect-ratio: 375 / 607;
+  padding: 60px 40px;
+  width: 100%;
+  clip-path: inset(0% 0% 100% 0%);
+  height: calc(100svh - 60px);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .add-active & {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+
+  //リサイズ中にメニューがちらつかないようにtransitionをなくす
+  .is-resize & {
+    transition: none;
+  }
+
+  @include mq(xl) {
+    position: static;
+    height: inherit;
+    width: auto;
+    background: none;
+    padding-top: 0;
+    clip-path: inset(0% 0% 0% 0%);
+    aspect-ratio: auto;
+    padding: 0;
+  }
+}
+
+.p-headerNav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: min(100%, $s-inner);
+
+  @include mq(xl) {
+    flex-direction: row;
+    height: inherit;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+}
+
+.p-headerNav__item {
+  width: 100%;
+
+  @include mq(xl) {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.p-headerNav__link {
+  color: map.get($color, text2);
+
+  @include mq(l) {
+    font-size: 1.5rem;
+  }
+
+  @include mq(xl) {
+    color: map.get($color, text1);
+    font-size: 0.875rem;
+  }
+}
+
+.p-headerNav__slash {}
+
+.p-headerNav__btnWrapper {
+  width: min(100%, 295px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-inline: auto;
+
+  @include mq(xl) {
+    display: none;
+  }
+}
+
+.p-headerNav__btn {}

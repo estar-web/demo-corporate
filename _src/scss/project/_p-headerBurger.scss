@@ -1,0 +1,64 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-headerBurger {
+  display: block;
+  height: 18px;
+  width: 27px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: map.get($z-map, header) + 1;
+  position: relative;
+  transition: rotate $ts-time $ts-func 0s;
+
+  .add-active & {
+    rotate: y 180deg;
+  }
+
+  @include mq(xl) {
+    display: none;
+  }
+}
+
+.p-headerBurger__line {
+  background-color: #023E78;
+  border-radius: 4px;
+  display: block;
+  height: 2.25px;
+  left: 0;
+  position: absolute;
+  transition: opacity $ts-time $ts-func 0s, right $ts-time $ts-func 0s, transform $ts-time $ts-func 0s;
+  width: 27px;
+
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  &:nth-child(3) {
+    top: 100%;
+  }
+
+
+  .add-active & {
+
+    &:nth-child(1) {
+      rotate: -45deg;
+      top: 8px;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      rotate: 45deg;
+      top: 8px;
+    }
+  }
+}

@@ -1,29 +1,57 @@
 @use "../global/" as global;
 
-.u-hide{
+.u-hide {
   display: block;
-  @include global.mq(){
+
+  @include global.mq() {
     display: none;
   }
 }
 
-.u-show{
+.u-hide--xl {
+  display: block;
+
+  @include global.mq(xl) {
+    display: none;
+  }
+}
+
+.u-hide--flex {
+  display: flex;
+
+  @include global.mq() {
+    display: none;
+  }
+}
+
+.u-show {
   display: none;
-  @include global.mq(){
+
+  @include global.mq() {
     display: block;
   }
 }
 
-.u-hide--inline{
+.u-show--xl {
+  display: none;
+
+  @include global.mq(xl) {
+    display: block;
+  }
+}
+
+.u-hide--inline {
   display: inline-block;
-  @include global.mq(){
+
+  @include global.mq() {
     display: none;
   }
 }
 
-.u-show--inline{
+.u-show--inline {
   display: none;
-  @include global.mq(){
+
+  @include global.mq() {
     display: inline-block;
   }
 }

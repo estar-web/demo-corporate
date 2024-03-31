@@ -28,23 +28,34 @@
   color: #023E78;
   background-color: #fff;
   width: 100%;
-  border: 1px solid #023E78;
-  padding: math.div(22, 16)*1em;
+  border: 1px solid #fff;
+  padding: math.div(21, 16)*1em;
+  line-height: 1.5;
 
   @include btn_hover();
 
-  @include mq() {
+  @include mq(l) {
+    font-size: 1.5rem;
+  }
+
+  @include mq(xl) {
     font-size: 0.875rem;
     padding: 1.5em;
     width: 176px;
+    border-color: #023E78;
   }
 }
 
 .c-btn--fill {
   color: map.get($color, text2);
   background-color: #023E78;
+  border-color: #fff;
 
   @include btn_hover(#002a52, map.get($color, text2));
+
+  @include mq(xl) {
+    border-color: #023E78;
+  }
 }
 
 .c-btn--arrow {

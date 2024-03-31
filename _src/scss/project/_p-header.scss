@@ -2,16 +2,28 @@
 @use "sass:math";
 @use "sass:map";
 
-.p-header__inner {
+.p-header {
+  height: $header-hight-sp;
+  background-color: #fff;
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: map.get($z-map, header);
 
+  @include mq(xl) {
+    height: $header-hight-pc;
+  }
+}
+
+.p-header__inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  height: inherit;
+  justify-content: space-between;
+  margin-inline: auto;
+  width: min(100%, 1280px);
 
   @include mq() {
-    width: min(100%, 1280px);
     padding-inline: 16px;
-    flex-direction: row;
   }
 }
 
@@ -19,9 +31,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mq(xl) {
+    flex-direction: row;
+    margin-left: auto;
+    height: inherit;
+    gap: 32px;
+  }
 }
 
 .p-header__btn {
-  display: flex;
-  align-items: center;
+  display: none;
+
+  @include mq(xl) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }

@@ -28,22 +28,31 @@
 </head>
 
 <body>
-  <header id="header" class="l-header">
+  <header id="js-header" class="l-header p-header">
     <div class="l-inner p-header__inner">
       <div class="p-header__left">
         <h1 class="p-headerLogo">
-          <a href="" class="p-headerLogo__link">ロゴが入ります</a><!-- /.p-header-log__link -->
-          <!-- <img class="p-header-logo__img" src="./img/logo.png" alt="ロゴの画像"> -->
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="p-headerLogo__link">Global standard</a><!-- /.p-header-log__link -->
         </h1>
       </div><!-- /.p-header__left -->
       <div class="p-header__right">
+        <button id="js-toggle" class="p-headerBurger" aria-label="メニューを開く">
+          <span class="p-headerBurger__line"></span>
+          <span class="p-headerBurger__line"></span>
+          <span class="p-headerBurger__line"></span>
+        </button>
         <nav class="p-headerNav">
           <ul class="p-headerNav__list">
-            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="#">メニュー1</a></li>
-            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="#">メニュー2</a></li>
-            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="#">メニュー3</a></li>
-            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="#">メニュー4</a></li>
-            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="#">メニュー5</a></li>
+            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="<?php echo esc_url(home_url('/')); ?>">トップ</a><span class="p-headerNav__slash u-show--xl">／</span></li>
+            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="<?php echo esc_url(home_url('/')); ?>#about">当社について</a><span class="p-headerNav__slash u-show--xl">／</span></li>
+            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="<?php echo esc_url(home_url('/')); ?>#service">サービス</a><span class="p-headerNav__slash u-show--xl">／</span></li>
+            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="<?php echo esc_url(home_url('/')); ?>#case">導入事例</a><span class="p-headerNav__slash u-show--xl">／</span></li>
+            <li class="p-headerNav__item"><a class="p-headerNav__link js-navLink" href="<?php echo esc_url(home_url('/')); ?>#news">お知らせ</a></li>
+            <li class="p-headerNav__item u-hide--xl">
+              <ul class="p-headerNav__btnWrapper">
+                <li class="p-headerNav__btn"><a class="js-navLink c-btn--nav c-btn--fill" href="<?php echo esc_url(home_url('/download/')); ?>">資料ダウンロード</a></li><!-- /.p-headerNav__btn -->
+                <li class="p-headerNav__btn"><a class="js-navLink c-btn--nav" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li><!-- /.p-headerNav__btn -->
+              </ul><!-- /.p-headerNav__btnWrapper -->
           </ul>
         </nav>
         <div class="p-header__btn">

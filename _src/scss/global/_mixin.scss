@@ -2,7 +2,7 @@
 @use "./function" as fn;
 
 // メディアクエリ
-@mixin mq($breakpoint: s) {
+@mixin mq($breakpoint: m) {
   @media #{map-get(var.$breakpoints,$breakpoint)} {
     @content;
   }
@@ -33,7 +33,7 @@
 }
 
 // font-sizeをclamp関数で出力
-@mixin fz_clamp($minFontSize, $maxFontSize, $minWidth: 375, $maxWidth: var.$l-inner) {
+@mixin fz_clamp($minFontSize, $maxFontSize, $minWidth: 375, $maxWidth: var.$xl-inner) {
   font-size: fn.calc_clamp($minFontSize, $maxFontSize, $minWidth, $maxWidth);
 }
 
