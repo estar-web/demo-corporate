@@ -1,0 +1,11 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.c-logo {
+  font-family: $logoFont;
+  font-style: italic;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: capitalize;
+}

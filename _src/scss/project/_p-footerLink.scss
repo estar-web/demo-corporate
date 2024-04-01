@@ -1,0 +1,60 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+
+.p-footerLink {}
+
+.p-footerLink__item {
+  padding-block: 46px 25px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: map.get($z-map, base);
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: map.get($z-map, base) - 1;
+  }
+
+  &:first-child {
+    background-image: url(../images/common/picture-footer-bg1.webp);
+
+    &::after {
+      background-color: rgba(0, 82, 162, 0.80);
+    }
+  }
+
+  &:nth-child(2) {
+    background-image: url(../images/common/picture-footer-bg2.webp);
+
+    &::after {
+      background-color: rgba(#023E78, 0.80);
+    }
+  }
+
+
+}
+
+.p-footerLink__title {
+  position: relative;
+  z-index: map.get($z-map, base) + 1;
+  color: map.get($color, text2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.p-footerLink__btn {
+  margin-top: 40px;
+  position: relative;
+  z-index: map.get($z-map, base) + 1;
+  max-width: 295px;
+  margin-inline: auto;
+}

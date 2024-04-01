@@ -91,8 +91,12 @@
   font-weight: 500;
   font-style: italic;
   color: map.get($color, accent1);
-  border-color: map.get($color, accent1);
+  border: 2px solid map.get($color, accent1);
   background-color: transparent;
+  justify-content: center;
+  @include fz_clamp(16, 24);
+  padding: math.div(27, 16) * 1em;
+  line-height: 1.188;
 
   @include btn_hover(map.get($color, accent1), #1a1a1a);
 

@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 <main id="main">
+  <div id="js-hero" class="fr-mv">
+    
+  </div><!-- /#js-hero.fr-mv -->
   <section class="fr-about" id="about">
     <div class="l-inner">
       <div class="p-sectionHead">

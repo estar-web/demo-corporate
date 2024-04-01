@@ -1,0 +1,42 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-footer {}
+
+.p-footer__toTop {}
+
+.p-footer__body {
+  background-color: #1a1a1a;
+  color: map.get($color, text2);
+  padding-block: 70px 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-footer__logo {
+  @include fz_clamp(40, 60);
+  font-family: $logoFont;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.p-footer__info {
+  margin-top: 22px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.p-footer__address {}
+
+.p-footer__tel {}
+
+.p-footer__copyright {
+  margin-top: 38px;
+  @include fz_clamp(12, 14);
+
+  @include mq() {
+    margin-top: 76px;
+  }
+}

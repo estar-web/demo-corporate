@@ -11,3 +11,16 @@
 .c-title--JP {
   @include fz_clamp(16, 24);
 }
+
+.c-title__footer--eg {
+  @include fz_clamp(40, 60);
+  font-family: $englishFont;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.c-title__footer--JP {
+  font-size: 1rem;
+  line-height: 1.5;
+}

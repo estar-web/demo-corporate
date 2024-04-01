@@ -29,3 +29,12 @@ jQuery(window).resize(() => {
     jQuery("html").removeClass("is-resize");
   }, 500);
 });
+
+// header
+jQuery(window).on("scroll", function () {
+  if (jQuery(this).scrollTop() > jQuery("#js-hero").outerHeight()) {
+    jQuery("body").addClass("add-scrolled");
+  } else {
+    jQuery("body").removeClass("add-scrolled");
+  }
+});
