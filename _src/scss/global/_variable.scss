@@ -32,7 +32,7 @@ $padding-sp: 20px;
 
 // breakpoint
 $breakpoints : ("xxl":"screen and (width >= 1400px)",
-  "xl":"screen and (width >= #{$xl-inner})",
+  "xl":"screen and (width >= 1200px)",
   "l":"screen and (width >= 992px)",
   "m":"screen and (width >= 768px)",
   "s":"screen and (width >= 576px)",

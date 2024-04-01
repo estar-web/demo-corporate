@@ -3,7 +3,13 @@
 @use "sass:map";
 
 
-.p-footerLink {}
+.p-footerLink {
+  @include mq() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .p-footerLink__item {
   padding-block: 46px 25px;
@@ -39,6 +45,10 @@
   }
 
 
+  @include mq() {
+    flex-basis: 50%;
+    padding-block: 55px 49px;
+  }
 }
 
 .p-footerLink__title {
@@ -57,4 +67,8 @@
   z-index: map.get($z-map, base) + 1;
   max-width: 295px;
   margin-inline: auto;
+
+  @include mq() {
+    max-width: 315px;
+  }
 }

@@ -79,6 +79,7 @@
   @include mq(xl) {
     color: map.get($color, text1);
     font-size: 0.875rem;
+    white-space: nowrap;
   }
 }
 
