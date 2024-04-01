@@ -1,0 +1,34 @@
+@use "../../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.fr-mvText {
+  position: absolute;
+  inset: auto auto 20px 20px;
+
+  @include mq() {
+    inset: auto auto 60px 50px;
+  }
+}
+
+.fr-mvText__title {
+  @include fz_clamp(40, 60);
+  color: #023E78;
+  font-family: $englishFont;
+  font-style: italic;
+  line-height: 1.35;
+  display: flex;
+  display: inline;
+  background-color: #fff;
+  box-decoration-break: slice;
+}
+
+.fr-mvText__lead {
+  color: map.get($color, text2);
+  @include fz_clamp(16, 20);
+  font-weight: 700;
+  background-color: #023E78;
+  margin-top: 16px;
+  box-decoration-break: slice;
+  line-height: 1.5;
+}

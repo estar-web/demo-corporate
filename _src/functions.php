@@ -117,6 +117,18 @@ function my_font()
 }
 add_action('wp_enqueue_scripts', 'my_font');
 
+/**
+ * SplideのCSSの読み込み
+ *
+ * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
+ */
+function splide_style()
+{
+  //SplideのCSS 読み込み
+  wp_enqueue_style('splide_style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), '1.0.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'splide_style');
+
 
 /**
  * CSSの読み込み
@@ -142,6 +154,18 @@ function jquery()
 add_action('wp_enqueue_scripts', 'jquery');
 
 /**
+ * Splideのjsファイルの読み込み
+ *
+ * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
+ */
+function splide_js()
+{
+  //splideのライブラリ 読み込み
+  wp_enqueue_script('splide_js', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), 'false', true);
+}
+add_action('wp_enqueue_scripts', 'splide_js');
+
+/**
  * JavaScriptの読み込み
  *
  * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
@@ -151,7 +175,6 @@ function my_scripts() {
   wp_enqueue_script('my', get_template_directory_uri().'/assets/js/script.js', array(), '1.0.0', true);
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
-
 
 /**
  * メニューの登録

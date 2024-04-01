@@ -1,0 +1,37 @@
+@use "../../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.fr-mvSlide {
+  width: 89.33333%;
+  margin-left: auto;
+  height: 100%;
+
+  @include mq() {
+    width: 92.96875%;
+  }
+}
+
+.fr-mvSlide__track {
+  height: inherit;
+}
+
+.fr-mvSlide__list {}
+
+.fr-mvSlide__slide {
+  text-align: right;
+}
+
+.fr-mvSlide__img {
+  height: 100%;
+  display: block;
+
+  img {
+    @include mq() {
+      object-fit: contain;
+      aspect-ratio: 1190 / 700;
+      height: 100%;
+      object-position: left center;
+    }
+  }
+}

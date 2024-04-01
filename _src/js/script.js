@@ -38,3 +38,19 @@ jQuery(window).on("scroll", function () {
     jQuery("body").removeClass("add-scrolled");
   }
 });
+
+//splide
+jQuery(document).ready(function () {
+  if (jQuery("#js-mvSlide").length) {
+    new Splide("#js-mvSlide", {
+      type: "fade", //フェードで移り変わり
+      pagination: false, //ページネーション非表示
+      rewind: true, //最後のスライドまで行ったら最初にもどる
+      autoplay: true, //自動再生
+      interval: 3000, //自動再生間隔（msec）
+      arrows: false, //矢印を表示しない
+      pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
+      pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
+    }).mount();
+  }
+});

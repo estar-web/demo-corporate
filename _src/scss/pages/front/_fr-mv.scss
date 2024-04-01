@@ -1,0 +1,21 @@
+@use "../../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.fr-mv {
+  max-height: 607px;
+  min-height: 40lvh;
+  aspect-ratio: 335 / 607;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: $s-inner;
+  margin-inline: auto;
+
+  @include mq() {
+    max-height: 700px;
+    max-width: 100%;
+    aspect-ratio: 1190 / 700;
+    max-width: $canvas;
+  }
+}
