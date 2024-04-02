@@ -1,0 +1,112 @@
+@use "../../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.fr-about {
+  background: linear-gradient(10deg, transparent 0 10%, #EDF3F8 10% 79%, transparent 79% 100%);
+  padding-block-end: 185px;
+  position: relative;
+  z-index: map.get($z-map, base);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 150px;
+    width: 78.66667%;
+    max-height: 620px;
+    aspect-ratio: 295 / 362;
+  }
+
+  &:before {
+    background-color: rgba(2, 62, 120, 0.80);
+    z-index: map.get($z-map, under);
+  }
+
+  &:after {
+    z-index: map.get($z-map, under) - 1;
+    background: transparent url(../images/front/picture-aboutBg.webp) no-repeat center center / cover;
+  }
+
+  @include mq() {
+    background: linear-gradient(10deg, transparent 0 17.5%, #EDF3F8 17.5% 60.5%, transparent 60.5% 100%);
+    padding-block-end: 243px;
+
+    &:before,
+    &:after {
+      width: min(45.45455%, 500px);
+      bottom: 270px;
+    }
+  }
+
+  @include mq(l) {
+
+    &:before,
+    &:after {
+      right: 0;
+      bottom: 130px;
+      width: min(55%, 500px);
+      width: 39.063%;
+      max-height: 800px;
+      aspect-ratio: 500 / 800;
+    }
+  }
+
+  @include mq(xxl) {
+
+    &:before,
+    &:after {
+      width: 40%;
+    }
+  }
+}
+
+.fr-about__inner {}
+
+.fr-about__title {}
+
+.fr-about__contents {
+  margin-top: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq() {
+    margin-top: 22px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.fr-about__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+
+  @include mq() {
+    flex-basis: calc(100% - 61.90909% - 40px);
+  }
+}
+
+.fr-about__text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+
+}
+
+.fr-about__img {
+  width: min(100%, 681px);
+  margin-top: 70px;
+
+  @include mq() {
+    margin-top: 0;
+    flex-basis: 61.90909%;
+  }
+}
+
+.fr-about__link {
+  margin-top: 42px;
+  align-self: flex-end;
+}

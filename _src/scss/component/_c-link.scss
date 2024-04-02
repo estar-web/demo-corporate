@@ -30,8 +30,8 @@
 
   /*矢印の形状*/
   &::after {
-    top: 35%;
-    width: 15px;
+    top: 27%;
+    width: 13px;
     background: #fff;
     transform: rotate(35deg);
   }
@@ -41,12 +41,13 @@
 
     &::before {
       width: 95.5px;
-      right: -64.5px;
+
       right: -113.5px;
     }
 
     &::after {
-      right: -64.5px;
+      top: 33%;
+      width: 17px;
       right: -113.5px;
     }
   }

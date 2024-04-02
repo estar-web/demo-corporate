@@ -1,0 +1,20 @@
+@use "../global/" as *;
+@use "sass:math";
+@use "sass:map";
+
+.p-section {
+  padding-block: 60px;
+
+  @include mq() {
+    padding-block: 150px;
+  }
+}
+
+.p-section__head {
+  @include mq() {
+    padding-top: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
